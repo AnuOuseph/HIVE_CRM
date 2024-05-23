@@ -130,11 +130,11 @@ function Applications({currentItems,leads,searchQuery,setSearchQuery}) {
                 <hr className='my-2' />
                 <div className='flex justify-between items-center px-2 mt-4 mb-2'>
                   <div>
-                    <button className='border border-gray-100 px-2 rounded-sm mx-2 text-xs bg-yellow-300 py-1 font-regular' onClick={downloadExcel}>Excel <FontAwesomeIcon icon={faArrowDown} size="xs" className='px-1' /></button>
-                    <button className='border border-gray-100 px-2 rounded-sm mx-2 text-xs bg-red-300 py-1 fond-regular' onClick={() => downloadPDF(['firstName', 'number', 'country','email'])}>Pdf <FontAwesomeIcon icon={faArrowDown} size="xs" className='px-1' /></button>
+                    <button className='border border-gray-100 md:px-2 px-1 rounded-sm mx-2 text-xs bg-yellow-300 py-1 font-regular' onClick={downloadExcel}>Excel <FontAwesomeIcon icon={faArrowDown} size="xs" className='px-1' /></button>
+                    <button className='border border-gray-100 md:px-2 px-1 rounded-sm md:mx-2 text-xs bg-red-300 py-1 fond-regular' onClick={() => downloadPDF(['firstName', 'number', 'country','email'])}>Pdf <FontAwesomeIcon icon={faArrowDown} size="xs" className='px-1' /></button>
                   </div>
                   <div>
-                    <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className='border border-gray-500 px-2 rounded-sm text-xs py-1' placeholder='Search' />
+                    <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className='border border-gray-500 w-36 md:w-40 px-2 rounded-sm text-xs py-1' placeholder='Search' />
                   </div>
                 </div>
                 <div className="px-0 pt-2">
@@ -190,14 +190,14 @@ function Applications({currentItems,leads,searchQuery,setSearchQuery}) {
             {/* delete modal */}
             {showDeleteModal && (
               <div className="modal-overlay fixed w-full h-screen top-0 left-0 right-0 bottom-0 flex justify-center items-center" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
-                <div className="modal-content bg-white w-[40%] shadow-md rounded py-2 px-2">
+                <div className="modal-content bg-white md:w-[40%] shadow-md rounded py-2 px-2">
                   <span className="close px-5 py-5 text-xl font-bold cursor-pointer" onClick={closeDeleteModal}>
                     &times;
                   </span>
-                  <p className='text-xl font-medium text-center'>Delete Lead</p>
+                  <p className='md:text-md text-sm font-medium text-center'>Delete Lead</p>
                   <div className='py-5 flex justify-center items-center'>
                     <div className='mx-5 my-2'>
-                      <p className='text-md font-medium'>Delete {selectedItem?.firstName}! Are you sure ?</p>
+                      <p className='text-xs font-medium'>Delete {selectedItem?.firstName}! Are you sure ?</p>
                     </div> 
                     <div className='w-1/4 mx-5 my-2'>
                       <button onClick={() => handleDelete(selectedItem?._id)} className="text-white py-2 px-6 rounded bg-red-400" >Delete</button>
