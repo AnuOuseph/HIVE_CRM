@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../redux/userSlice';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faProjectDiagram } from "@fortawesome/free-solid-svg-icons";
 
 function SignIn() {
   const history = useNavigate();
@@ -34,8 +36,11 @@ function SignIn() {
     <div className="w-full h-screen">
       <div className="bg-white">
         <div className="bg-white h-screen w-[100%] p-5">
-        <p className="text-start px-4 py-4 uppercase">hello</p>
-        <hr />
+          <div className="flex justify-self-start items-center">
+            <FontAwesomeIcon icon={faProjectDiagram} className='md:ml-4' style={{fontSize: "16px", color: "#FE6E49"}}/>
+            <p className='text-start px-2 py-4 uppercase'>hive</p>
+          </div>
+          <hr />
           <div className=" w-[100%] flex justify-center items-center">
             <div className="p-14 mt-5">
               <div className="flex">
